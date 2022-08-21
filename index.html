@@ -8,16 +8,18 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
- 
-    <div class="split" id="app">
+<body id="app">
+    <input type="text" v-model="name">
+    <button @click="submit()" >Submit</button>
+    <div class="split">
+    
          <ul>
             <li class="draggable" v-for="(draggable,index) in drag" class="ui-state-highlight">{{draggable}}</li>
             
           </ul>
            
           <ul id="sortable">
-            <li class="ui-state-default item" v-for = "(item,index) in items">{{item}}</li>
+            <li class="ui-state-default item" v-for = "(item,index) in items"><p>{{item}}</p> <button  @click="updateText(index)">Edit</button></li>
           </ul>
           <div class="">
             {{items}}
